@@ -1,8 +1,12 @@
-
+"use client"
+import { menuItemClick ,actionItemClick} from "@/app/redux/slice/menuSlice";
 import {BiSolidPencil,BiSolidEraser,BiSolidDownload,BiLeftArrowCircle,BiRightArrowCircle,BiRevision} from "react-icons/bi"
+import { useDispatch, useSelector } from "react-redux"
 
 
 export default function Menu(){
+ const dispatch = useDispatch();
+//  const selector = useSelector()
     return (
       <div className="absolute flex left-1/2 shadow-md bg- transform -translate-x-1/2 w-1/4  justify-around top-10  py-2 rounded-md border-2 border-gray-300">
         <div className="cursor-pointer h-9 w-10 flex justify-center items-center rounded-md">
