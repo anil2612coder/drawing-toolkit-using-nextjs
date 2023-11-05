@@ -2,12 +2,16 @@
 
 import { useState } from "react"
 import { colors} from "../constants";
+import { useSelector } from "react-redux";
 
 
 export default function Toolbox(){
     const [range ,setRagne] = useState(3)
+    const activeMenuItemstatechange = useSelector((state) => state.menu.activeMenuItem)
+    console.log(activeMenuItemstatechange)
 
-      console.log(colors)
+
+      
     const updateBrushSize=(e)=>{
      console.log( e.target.value)
      setRagne( e.target.value)
@@ -22,12 +26,14 @@ export default function Toolbox(){
                         
                    ))}
                 </div>
+              
             </div>
+            
             <div className="p-2">
             <h4 className="text-lg font-semibold font-serif">Brush Size</h4>
         
         <input className="w-full hover:cursor-pointer" type="range" value={range} min={1} max={10} step={1} onChange={updateBrushSize}/>
-     
+          <h1>{activeMenuItemstatechange}</h1>
             </div>
         </div>
     )

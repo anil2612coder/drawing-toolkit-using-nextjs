@@ -13,7 +13,7 @@ const menuSlice = createSlice({
   name: 'menu',
   initialState, 
   reducers: {
-   menuItemClick:(state, action)=>{
+   activeMenuItemClick:(state, action)=>{
     state.activeMenuItem = action.payload
    },
   actionItemClick:(state, action)=>{
@@ -22,7 +22,7 @@ const menuSlice = createSlice({
   },
 });
 
-export const { menuItemClick,actionItemClick } = menuSlice.actions;
+export const { activeMenuItemClick,actionItemClick } = menuSlice.actions;
 export default menuSlice.reducer;
 
 
