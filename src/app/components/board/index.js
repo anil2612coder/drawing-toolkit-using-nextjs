@@ -9,7 +9,7 @@ export default function Board(){
     useEffect(()=>{
     if(!canvasRef.current) return
     const canvas = canvasRef.current;
-    console.log(canvasRef)
+    
     const context = canvas.getContext("2d");
     
      canvas.width = window.innerWidth
