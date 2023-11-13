@@ -3,14 +3,16 @@
 import { useState } from "react"
 import { colors, menu_items} from "../constants";
 import { useDispatch, useSelector } from "react-redux";
-import { chooseColorClick } from "@/app/redux/slice/toolboxSlice";
+import { chooseColorClick,chooseSizeClick } from "@/app/redux/slice/toolboxSlice";
 
 
 export default function Toolbox(){
-    const [range ,setRagne] = useState(3)
+    
     const dispatch =useDispatch();
     const activeMenuItemstatechange = useSelector((state) => state.menu.activeMenuItem)
     const showEraserToolBox = activeMenuItemstatechange !== menu_items[1]
+    const size = useSelector((state)=>state.tool.size)
+    const [rangeSize, setRangeSize] = useState(size)
     
   
     const chosenColor =(color)=>{
@@ -20,7 +22,8 @@ export default function Toolbox(){
 
       
     const updateBrushSize=(e)=>{
-     
+        setRangeSize(e.target.value)
+        dispatch(chooseSizeClick(e.target.value))
      
     }
     return(
@@ -39,7 +42,7 @@ export default function Toolbox(){
             <div className="p-2 w-48">
             <h4 className="text-lg font-semibold font-serif">Brush Size</h4>
         
-        <input className="w-full hover:cursor-pointer" type="range" value={range} min={1} max={10} step={1} onChange={updateBrushSize}/>
+        <input className="w-full hover:cursor-pointer" type="range" value={size} min={1} max={10} step={1} onChange={updateBrushSize}/>
          
             </div>
         </div>
