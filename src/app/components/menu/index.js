@@ -40,8 +40,6 @@ export default function Menu(){
         <div className="cursor-pointer hover:bg-blue-100 h-9 w-10 flex justify-center items-center rounded-md">
        <BiSolidDownload className="text-2xl"/>
         </div>
-        
-       
       </div>
     )
 }

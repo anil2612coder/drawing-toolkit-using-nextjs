@@ -16,6 +16,30 @@ export default function Toolbox(){
     
   
     const chosenColor =(color)=>{
+        for(let color in colors){
+ 
+
+      if(color == "bg-black"){
+        return "black"
+      } else if (color == "bg-white"){
+        return "white"
+      } else if (color == "bg-red-500"){
+        return "red"
+      } else if (color == "bg-green-500"){
+        return "green"
+      } else if(color == "bg-blue-500"){
+        return "blue"
+      } else if (color == "bg-yellow-500"){
+        return "yellow"
+      } else if (color == "bg-orange-500"){
+        return "orange"
+      } else {
+        return "black"
+      }
+
+
+        }
+       
         dispatch(chooseColorClick(color))
     }
 
