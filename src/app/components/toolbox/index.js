@@ -16,31 +16,28 @@ export default function Toolbox(){
     
   
     const chosenColor =(color)=>{
-        for(let color in colors){
- 
+        for(let i=0; i<colors.length;i++){
+            ["bg-black","bg-white", "bg-red-500", "bg-green-500", "bg-blue-500", "bg-yellow-500", "bg-orange-500"]
+            if(color == "bg-white"){
+                dispatch(chooseColorClick("white")) 
+            } else if (color == "bg-red-500"){
+                dispatch(chooseColorClick("red"))
+            } else if (color == "bg-green-500"){
+                dispatch(chooseColorClick("green"))
+            } else if (color == "bg-blue-500"){
+                dispatch(chooseColorClick("blue"))
+            } else if (color == "bg-yellow-500"){
+                dispatch(chooseColorClick("yellow"))
+            } else if (color == "bg-orange-500"){
+                dispatch(chooseColorClick("orange"))
+            } else {
+                dispatch(chooseColorClick("black"))
 
-      if(color == "bg-black"){
-        return "black"
-      } else if (color == "bg-white"){
-        return "white"
-      } else if (color == "bg-red-500"){
-        return "red"
-      } else if (color == "bg-green-500"){
-        return "green"
-      } else if(color == "bg-blue-500"){
-        return "blue"
-      } else if (color == "bg-yellow-500"){
-        return "yellow"
-      } else if (color == "bg-orange-500"){
-        return "orange"
-      } else {
-        return "black"
-      }
-
-
+            }
         }
+        
        
-        dispatch(chooseColorClick(color))
+        
     }
 
 
